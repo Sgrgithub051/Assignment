@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Que 3 next prime diff</title>
+<body>
+<script>
+const num = parseInt(prompt("Enter a positive number: "));
+const number = num;
+const isPrime = (number) => {
+   let sqrtnum = Math.floor(Math.sqrt(number));
+   let prime = number !== 1;
+   for(let i = 2; i < sqrtnum + 1; i++){
+      if(number % i === 0){
+         prime = false;
+         break;
+      };
+   };
+   return prime;
+}
+const nextPrime = (number = 1) => {
+   while(!isPrime(++number)){
+   };
+   return number;
+};
+let diff = nextPrime(number)-(num);
+
+if (num === 1) {
+    document.write("1 is neither prime nor composite number.");
+}
+else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {   
+                isPrime = false;
+            break;
+         }
+        }
+    if (isPrime) {
+        document.write(`${num} is a prime number. `);
+    } else {
+        document.write(`${num} is a not prime number`);
+    }
+}
+else {
+    document.write("The number is not a prime number.");
+}
+document.write('<br><br><br> next prime number = ' +nextPrime(number));
+ document.write('<br><br> diffrence between both numbers = ' +diff );
+</script>
+</body>
+</html>
